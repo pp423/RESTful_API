@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html data-ng-app="restApp">
+<head>
+<meta charset="UTF-8">
+<title>Sample RestApp</title>
+</head>
+<body data-ng-controller="MainCtrl as mctrl">
+
+	<button data-ng-click="mctrl.getAllEmp()">GET ALL Employees</button>
+	<hr>
+	<input type="text" placeholder="Emp ID" data-ng-model="mctrl.empId" required>
+	<button data-ng-click="mctrl.getEmp()">GET Employee</button>
+	<hr>
+	<form data-ng-submit="mctrl.tryLogin()" data-ng-show = "!mctrl.loggedIn">
+		<div>
+			<label> Email </label>
+			<input type="text" data-ng-model="mctrl.auth.email">
+		</div>
+		<div>
+			<label> Password </label>
+			<input type="password" data-ng-model="mctrl.auth.password">
+		</div>
+		<button type="submit">Login</button>
+	</form>
+	<p data-ng-show="mctrl.loggedIn">You are Logged In</p>
+	<hr>
+	<form data-ng-submit="mctrl.addEmp()">
+		<div>
+			<label>First Name</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.firstName">
+		</div>
+		<div>
+			<label>Last Name</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.lastName">
+		</div>
+		<div>
+			<label>Email</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.email">
+		</div>
+		<div>
+			<label>Phone</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.phone">
+		</div>
+		<div>
+			<label>Address Line 1</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.address1">
+		</div>
+		<div>
+			<label>Address Line 2</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.address2">
+		</div>
+		<div>
+			<label>City</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.city">
+		</div>
+		<div>
+			<label>State</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.state">
+		</div>
+		<div>
+			<label>Zip</label>
+			<input type = "text" data-ng-model="mctrl.newEmp.zip">
+		</div>
+		<div>
+			<button type = "submit">Add Employee</button>
+		</div>
+	</form>
+	
+	<script src="https://code.angularjs.org/1.4.4/angular.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/main-ctrl.js"></script>
+</body>
+</html>
